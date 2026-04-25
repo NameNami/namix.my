@@ -1,408 +1,447 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- ================= SEO META TAGS ================= -->
-    <title>Muhammad Najmi | Python Back-End Developer</title>
-    <meta name="description" content="Portfolio of Muhammad Najmi, a Python Back-End Developer specializing in scalable automation, API integration, and AI/Computer Vision (YOLO, Face Recognition).">
-    <meta name="keywords" content="Muhammad Najmi, Python Developer, Back-End Developer, Software Engineering Internship, Automation, YOLO, Computer Vision, Flask, GCP, Malaysia, UniKL">
-    <meta name="author" content="Muhammad Najmi">
-    <meta name="robots" content="index, follow"> <!-- Tells Google to index and follow links -->
+    <title>Muhammad Najmi bin Mohd Sanusi | Full Stack Developer</title>
+    <meta name="description" content="Portfolio of Muhammad Najmi bin Mohd Sanusi, a Full Stack Developer specializing in Python, the VILT stack, and hardware IoT integration. View projects like BEATS and Shopee automation systems.">
+    <meta name="keywords" content="Muhammad Najmi bin Mohd Sanusi, Najmi Sanusi, Full Stack Developer, Python Developer, VILT Stack, Laravel, Vue.js, IoT, ESP32, Malaysia, UniKL MIIT">
+    <meta name="author" content="Muhammad Najmi bin Mohd Sanusi">
     
-    <!-- Open Graph Tags for Social Media / Discord / LinkedIn Sharing -->
-    <meta property="og:title" content="Muhammad Najmi | Python Back-End Developer">
-    <meta property="og:description" content="Python Back-End Developer specializing in scalable automation and API integration. Seeking a Software Engineering Internship for Oct 2026.">
+    <meta property="og:title" content="Muhammad Najmi bin Mohd Sanusi | Portfolio">
+    <meta property="og:description" content="Full Stack Developer specializing in backend architecture, web integration, and automation. Seeking July 2026 Internship.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://yourdomain.com"> <!-- Update this with your actual URL -->
-    <!-- ================================================= -->
 
-    <!-- Google Fonts for modern typography -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Muhammad Najmi bin Mohd Sanusi",
+      "alternateName": ["Najmi Sanusi", "Nami"],
+      "jobTitle": "Full Stack Developer",
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "Universiti Kuala Lumpur (Malaysian Institute of Information Technology)"
+      },
+      "knowsAbout": ["Python", "Laravel", "Vue.js", "C++", "IoT Development", "Automation", "AWS", "Swift"],
+      "sameAs": [
+        "https://github.com/namenami",
+        "https://linkedin.com/in/najmisanusi"
+      ]
+    }
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: '#3b82f6',
+                        darkBg: '#0f172a',
+                        cardBg: '#1e293b'
+                    },
+                    animation: {
+                        'bounce-slow': 'bounce 3s infinite',
+                    }
+                }
+            }
+        }
+    </script>
     
     <style>
-        /* --- CSS VARIABLES (Theme) --- */
-        :root {
-            --bg-main: #0f172a;       /* Slate 900 */
-            --bg-card: #1e293b;       /* Slate 800 */
-            --bg-hover: #334155;      /* Slate 700 */
-            --text-main: #f8fafc;     /* Slate 50 */
-            --text-muted: #94a3b8;    /* Slate 400 */
-            --accent: #38bdf8;        /* Sky 400 */
-            --accent-glow: rgba(56, 189, 248, 0.15);
-            --font-main: 'Inter', sans-serif;
-            --font-code: 'Fira Code', monospace;
-            --transition: all 0.3s ease;
+        .cursor::after {
+            content: '|';
+            animation: blink 1s step-start infinite;
         }
-
-        /* --- RESET & BASE --- */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body {
-            font-family: var(--font-main);
-            background-color: var(--bg-main);
-            color: var(--text-main);
-            line-height: 1.7;
-            -webkit-font-smoothing: antialiased;
+        @keyframes blink {
+            50% { opacity: 0; }
         }
-
-        /* --- TYPOGRAPHY --- */
-        h1, h2, h3, h4 { color: var(--text-main); font-weight: 700; margin-bottom: 1rem; }
-        h1 { font-size: 3rem; letter-spacing: -0.05em; line-height: 1.2; }
-        h2 { font-size: 2rem; display: inline-block; margin-bottom: 2rem; position: relative; }
-        h2::after {
-            content: ''; position: absolute; left: 0; bottom: -8px;
-            height: 3px; width: 40px; background-color: var(--accent); border-radius: 2px;
-        }
-        h3 { font-size: 1.25rem; color: var(--text-main); }
-        p { color: var(--text-muted); margin-bottom: 1rem; }
-        a { color: var(--accent); text-decoration: none; transition: var(--transition); }
-        a:hover { text-decoration: underline; text-underline-offset: 4px; }
-        
-        .highlight { color: var(--accent); }
-        .code-text { font-family: var(--font-code); font-size: 0.9em; }
-
-        /* --- LAYOUT & UTILITIES --- */
-        .container { max-width: 1000px; margin: 0 auto; padding: 0 2rem; }
-        section {
-            padding: 6rem 0; opacity: 0; transform: translateY(20px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        }
-        section.visible { opacity: 1; transform: translateY(0); }
-
-        /* --- NAVBAR --- */
-        nav {
-            position: fixed; top: 0; width: 100%; background: rgba(15, 23, 42, 0.9);
-            backdrop-filter: blur(10px); z-index: 1000; border-bottom: 1px solid rgba(255,255,255,0.05);
-        }
-        .nav-content { display: flex; justify-content: space-between; align-items: center; height: 70px; }
-        .logo { font-family: var(--font-code); font-weight: 700; font-size: 1.2rem; color: var(--accent); text-decoration: none; }
-        .logo:hover { text-decoration: none; }
-        .nav-links { display: flex; gap: 2rem; list-style: none; }
-        .nav-links a { color: var(--text-main); font-size: 0.9rem; font-weight: 500; }
-        .nav-links a:hover { color: var(--accent); text-decoration: none; }
-
-        /* --- HERO SECTION --- */
-        #home { padding-top: 12rem; padding-bottom: 8rem; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; }
-        .hero-subtitle { font-family: var(--font-code); color: var(--accent); margin-bottom: 1rem; display: block; }
-        .hero-desc { max-width: 600px; font-size: 1.1rem; margin-top: 1.5rem; margin-bottom: 2.5rem; }
-        .btn {
-            display: inline-block; padding: 0.75rem 1.5rem; border: 1px solid var(--accent);
-            border-radius: 4px; color: var(--accent); font-family: var(--font-code);
-            font-size: 0.9rem; transition: var(--transition); background: transparent; cursor: pointer;
-        }
-        .btn:hover { background: var(--accent-glow); text-decoration: none; }
-
-        /* --- ABOUT & EDUCATION --- */
-        .about-grid { display: grid; grid-template-columns: 3fr 2fr; gap: 4rem; }
-        .edu-card { background: var(--bg-card); padding: 2rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05); }
-        .edu-card h4 { color: var(--accent); margin-bottom: 0.5rem; }
-        .cgpa {
-            display: inline-block; background: var(--accent-glow); color: var(--accent);
-            padding: 0.2rem 0.6rem; border-radius: 20px; font-size: 0.85rem; font-weight: 600; margin-top: 0.5rem;
-        }
-
-        /* --- SKILLS --- */
-        .skills-container { display: flex; flex-direction: column; gap: 2rem; }
-        .skill-category h3 { font-size: 1.1rem; margin-bottom: 1rem; color: var(--text-main); }
-        .skill-tags { display: flex; flex-wrap: wrap; gap: 0.75rem; }
-        .tag {
-            background: var(--bg-card); color: var(--text-main); padding: 0.5rem 1rem;
-            border-radius: 4px; font-size: 0.9rem; border: 1px solid rgba(255,255,255,0.05); transition: var(--transition);
-        }
-        .tag:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
-        
-        .coursework-list { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-        .course-tag {
-            background: rgba(255,255,255,0.03); color: var(--text-muted); padding: 0.4rem 0.8rem;
-            border-radius: 20px; font-size: 0.85rem; font-family: var(--font-code);
-        }
-
-        /* --- EXPERIENCE & PROJECTS --- */
-        .timeline-item { margin-bottom: 3rem; padding-left: 1.5rem; border-left: 2px solid var(--bg-card); position: relative; }
-        .timeline-item::before {
-            content: ''; position: absolute; left: -6px; top: 6px;
-            width: 10px; height: 10px; background: var(--accent); border-radius: 50%;
-        }
-        .timeline-date { font-family: var(--font-code); font-size: 0.85rem; color: var(--accent); margin-bottom: 0.5rem; display: block; }
-        
-        .project-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem; }
-        .project-card {
-            background: var(--bg-card); padding: 2rem; border-radius: 8px;
-            border: 1px solid rgba(255,255,255,0.05); transition: var(--transition);
-            display: flex; flex-direction: column; height: 100%;
-        }
-        .project-card:hover { transform: translateY(-5px); border-color: rgba(56, 189, 248, 0.3); }
-        .project-card h3 { margin-bottom: 1rem; }
-        .project-card p { flex-grow: 1; font-size: 0.95rem; }
-        .project-tech {
-            margin-top: 1.5rem; font-family: var(--font-code); font-size: 0.8rem;
-            color: var(--text-muted); display: flex; flex-wrap: wrap; gap: 1rem;
-        }
-
-        .more-projects-card {
-            background: transparent; border: 1px dashed var(--text-muted);
-            display: flex; align-items: center; justify-content: center; text-align: center;
-            padding: 2rem; min-height: 200px; border-radius: 8px; transition: var(--transition);
-        }
-        .more-projects-card:hover { border-color: var(--accent); background: var(--accent-glow); }
-
-        /* --- AWARDS & CERTIFICATIONS --- */
-        .list-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
-        .list-item { margin-bottom: 1.5rem; background: var(--bg-card); padding: 1.5rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05);}
-        .list-item h4 { margin-bottom: 0.2rem; }
-
-        /* --- FOOTER --- */
-        footer { text-align: center; padding: 3rem 0; border-top: 1px solid rgba(255,255,255,0.05); margin-top: 4rem; }
-        .social-links { display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 1.5rem; }
-        .social-links a { color: var(--text-main); font-family: var(--font-code); font-size: 0.9rem; }
-        .social-links a:hover { color: var(--accent); }
-
-        /* --- RESPONSIVE --- */
-        @media (max-width: 768px) {
-            .about-grid { grid-template-columns: 1fr; gap: 2rem; }
-            .list-grid { grid-template-columns: 1fr; }
-            h1 { font-size: 2.2rem; }
-            .nav-links { display: none; }
-            section { padding: 4rem 0; }
-        }
+        /* Custom scrollbar for a cleaner look */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #3b82f6; }
     </style>
 </head>
-<body>
+<body class="bg-darkBg text-slate-300 font-sans antialiased selection:bg-brand selection:text-white overflow-x-hidden">
 
-    <!-- NAVBAR -->
-    <nav>
-        <div class="container nav-content">
-            <a href="#" class="logo">Najmi.</a>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-            </ul>
+    <nav class="fixed w-full bg-darkBg/90 backdrop-blur-md border-b border-slate-800 z-50 transition-all duration-300" id="navbar">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <a href="#home" class="text-white font-bold text-xl tracking-tight hover:text-brand transition-colors">Nami.</a>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#about" class="hover:text-brand transition-colors transform hover:-translate-y-0.5 duration-200">About</a>
+                        <a href="#projects" class="hover:text-brand transition-colors transform hover:-translate-y-0.5 duration-200">Projects</a>
+                        <a href="#experience" class="hover:text-brand transition-colors transform hover:-translate-y-0.5 duration-200">Experience</a>
+                        <a href="#contact" class="hover:text-brand transition-colors transform hover:-translate-y-0.5 duration-200">Contact</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </nav>
 
-    <!-- HERO -->
-    <main>
-        <section id="home" class="container visible">
-            <span class="hero-subtitle">Hi, my name is</span>
-            <h1>Muhammad Najmi.</h1>
-            <h1 style="color: var(--text-muted);">I build scalable back-end systems.</h1>
-            <p class="hero-desc">
-                I'm a Python Back-End Developer specializing in automation, high-concurrency architecture, and API integration. Currently pursuing my Diploma in IT (CGPA 3.85) at UniKL MIIT, and looking for a Software Engineering Internship for October 2026.
+    <section id="home" class="min-h-screen flex items-center pt-20 px-4 max-w-6xl mx-auto relative">
+        <div class="max-w-3xl z-10 animate-fade-in">
+            <p class="text-brand font-mono mb-4 text-lg">Hi, my name is</p>
+            <h1 class="text-5xl md:text-7xl font-bold text-white mb-4 tracking-tight">
+                Muhammad Najmi. <br>
+            </h1>
+            <h2 class="text-2xl md:text-3xl text-slate-300 mb-6 font-mono h-10">
+                I build <span id="typewriter" class="text-brand cursor"></span>
+            </h2>
+            <p class="text-lg md:text-xl text-slate-400 mb-10 leading-relaxed max-w-2xl">
+                A Full Stack Developer specializing in end-to-end application development, from engineering web scraping pipelines to designing responsive user dashboards. Currently seeking a Software Engineering Internship for July 2026.
             </p>
-            <div>
-                <a href="mailto:najmisanusi@gmail.com" class="btn">Get In Touch</a>
+            <div class="flex flex-wrap gap-4 text-sm font-mono">
+                <a href="#projects" class="bg-brand text-white px-6 py-3 rounded-md hover:bg-blue-600 hover:shadow-lg hover:shadow-brand/20 transition-all transform hover:-translate-y-1">View My Work</a>
+                <a href="https://github.com/namix.my" target="_blank" class="bg-cardBg text-white px-6 py-3 rounded-md hover:bg-slate-700 transition-all border border-slate-700 transform hover:-translate-y-1">
+                    <i class="fab fa-github mr-2"></i>GitHub
+                </a>
             </div>
-        </section>
+        </div>
+        
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce-slow text-slate-500">
+            <a href="#about"><i class="fas fa-chevron-down text-2xl hover:text-brand transition-colors"></i></a>
+        </div>
+    </section>
 
-        <!-- ABOUT & EDUCATION -->
-        <section id="about" class="container">
-            <h2>About Me</h2>
-            <div class="about-grid">
-                <div class="about-text">
-                    <p>
-                        Hello! I'm Najmi, a developer who enjoys creating automated solutions and building robust architectures. My journey started with a fascination for making things work efficiently behind the scenes, leading me to specialize in Python and system design.
-                    </p>
-                    <p>
-                        I thrive on solving complex problems—whether it's managing high-concurrency requests, integrating external APIs, or building intelligent <span class="highlight">Computer Vision applications using YOLO and Face Recognition</span>. I am a self-directed learner and have managed full development lifecycles independently.
-                    </p>
-                    <p>
-                        I am actively seeking an internship opportunity for <strong>October 2026</strong> where I can apply my skills in a professional software engineering environment.
-                    </p>
-                </div>
-                
-                <div class="education-block">
-                    <div class="edu-card">
-                        <h3>Education</h3>
-                        <br>
-                        <h4>Universiti Kuala Lumpur (UniKL MIIT)</h4>
-                        <p style="margin-bottom: 0;">Diploma in Information Technology</p>
-                        <p class="code-text" style="font-size: 0.8rem;">July 2024 - Jan 2027 (Expected)</p>
-                        <span class="cgpa">Current CGPA: 3.85</span>
-                        <p style="margin-top: 1rem; font-size: 0.9rem;"><strong>Dean's List:</strong> Achieved 3 times</p>
-                    </div>
-                </div>
+    <section id="about" class="py-24 border-t border-slate-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 observer-element opacity-0 translate-y-10 transition-all duration-700 ease-out">
+            <div class="flex items-center mb-12">
+                <h2 class="text-3xl font-bold text-white whitespace-nowrap">About Me</h2>
+                <div class="h-px bg-slate-700 w-full ml-6"></div>
             </div>
-        </section>
-
-        <!-- SKILLS & COURSEWORK -->
-        <section id="skills" class="container">
-            <h2>Technical Skills</h2>
-            <div class="skills-container">
-                
-                <div class="skill-category">
-                    <h3>Languages</h3>
-                    <div class="skill-tags">
-                        <span class="tag">Python</span>
-                        <span class="tag">Java</span>
-                        <span class="tag">SQL (MySQL)</span>
-                        <span class="tag">Swift</span>
-                        <span class="tag">PHP</span>
-                        <span class="tag">HTML/CSS</span>
-                        <span class="tag">Micropython</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3>AI & Computer Vision</h3>
-                    <div class="skill-tags">
-                        <span class="tag" style="border-color: var(--accent); color: var(--accent);">YOLO (Object Detection)</span>
-                        <span class="tag" style="border-color: var(--accent); color: var(--accent);">Face Recognition</span>
-                        <span class="tag">FirebaseAI</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Frameworks, Tools & APIs</h3>
-                    <div class="skill-tags">
-                        <span class="tag">Flask</span>
-                        <span class="tag">Google Cloud Platform (GCP)</span>
-                        <span class="tag">REST APIs</span>
-                        <span class="tag">Git & Github</span>
-                        <span class="tag">Threading / Multiprocessing</span>
-                        <span class="tag">Discord SDK</span>
-                        <span class="tag">Telegram SDK</span>
-                        <span class="tag">Shopee OpenAPI</span>
-                        <span class="tag">Twilio API</span>
-                    </div>
-                </div>
-
-                <div class="skill-category" style="margin-top: 1rem;">
-                    <h3><span class="highlight">#</span> Relevant Academic Coursework</h3>
-                    <div class="coursework-list">
-                        <span class="course-tag">Software Engineering</span>
-                        <span class="course-tag">Object Oriented System Analysis & Design</span>
-                        <span class="course-tag">Database Systems</span>
-                        <span class="course-tag">IoT Data Analytic</span>
-                        <span class="course-tag">Statistics & Data Analytic</span>
-                        <span class="course-tag">Computer Architecture</span>
-                        <span class="course-tag">Operating Systems</span>
-                        <span class="course-tag">Computer Networks</span>
-                        <span class="course-tag">Discrete Mathematics</span>
-                        <span class="course-tag">Mobile App Development</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- EXPERIENCE -->
-        <section id="experience" class="container">
-            <h2>Experience</h2>
             
-            <div class="timeline-item">
-                <span class="timeline-date">January 2021 - Present</span>
-                <h3>Independent Developer</h3>
-                <h4 style="color: var(--text-muted); font-weight: 400; font-size: 1rem; margin-bottom: 1rem;">Self-Employed / Freelance</h4>
-                <p>Managed the full development lifecycle for client and self-directed automation services.</p>
-                <ul style="color: var(--text-muted); margin-left: 1.5rem; margin-bottom: 1rem;">
-                    <li style="margin-bottom: 0.5rem;">Specialized in Python back-end architecture and external API integration.</li>
-                    <li style="margin-bottom: 0.5rem;">Developed and deployed high-concurrency solutions for demanding network environments.</li>
-                    <li>Utilized advanced threading and multiprocessing to ensure system stability and performance.</li>
-                </ul>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="space-y-6 text-lg text-slate-400 leading-relaxed">
+                    <p>
+                        My coding origins are rooted in brute-force automation. Back in Form 2, I was already writing Python scripts with computer vision to flip items on the Hypixel Skyblock bazaar and building "sape cepat dia dapat" auto-commenters for Facebook Live.
+                    </p>
+                    <p>
+                        Today, I channel that hacker mindset into structured software engineering at UniKL MIIT. I maintain a 3.85 CGPA and focus on high-concurrency system design, robust web integration, and the VILT stack. Whether I'm flashing C++ firmware to an ESP32 or building secure APIs with Laravel Sanctum, I prioritize performance and utility.
+                    </p>
+                    <p>
+                        When I'm not writing snake_case PHP or hunting down bugs, I'm usually out hitting the trails on my hardtail MTB or training for my next half-marathon.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-6 font-mono text-brand">Tech Stack</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-cardBg p-4 rounded border border-slate-800 hover:border-brand transition-colors group">
+                            <h4 class="text-white font-bold mb-2 group-hover:text-brand transition-colors">Backend</h4>
+                            <p class="text-sm text-slate-400">Python, PHP, Java, SQL (MySQL), Flask, Laravel</p>
+                        </div>
+                        <div class="bg-cardBg p-4 rounded border border-slate-800 hover:border-brand transition-colors group">
+                            <h4 class="text-white font-bold mb-2 group-hover:text-brand transition-colors">Frontend</h4>
+                            <p class="text-sm text-slate-400">Vue.js, Inertia.js, Tailwind CSS, JavaScript, HTML, CSS</p>
+                        </div>
+                        <div class="bg-cardBg p-4 rounded border border-slate-800 hover:border-brand transition-colors group">
+                            <h4 class="text-white font-bold mb-2 group-hover:text-brand transition-colors">Hardware / Systems</h4>
+                            <p class="text-sm text-slate-400">ESP32, C++, Micropython, Threading, Multiprocessing</p>
+                        </div>
+                        <div class="bg-cardBg p-4 rounded border border-slate-800 hover:border-brand transition-colors group">
+                            <h4 class="text-white font-bold mb-2 group-hover:text-brand transition-colors">Cloud & APIs</h4>
+                            <p class="text-sm text-slate-400">GCP, AWS, FirebaseAI, Discord/Telegram SDKs, Shopee API</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- PROJECTS -->
-        <section id="projects" class="container">
-            <h2>Featured Projects</h2>
-            <div class="project-grid">
+    <section id="projects" class="py-24 bg-cardBg/30 border-t border-slate-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center mb-8 observer-element opacity-0 translate-y-10 transition-all duration-700 ease-out">
+                <h2 class="text-3xl font-bold text-white whitespace-nowrap">Things I've Built</h2>
+                <div class="h-px bg-slate-700 w-full ml-6"></div>
+            </div>
+
+            <div class="flex flex-wrap gap-4 mb-10 observer-element opacity-0 translate-y-10 transition-all duration-700 delay-100 ease-out">
+                <button class="filter-btn active bg-brand text-white px-4 py-2 rounded font-mono text-sm" data-filter="all">All</button>
+                <button class="filter-btn bg-slate-800 text-slate-300 hover:text-white px-4 py-2 rounded border border-slate-700 hover:border-brand transition-colors font-mono text-sm" data-filter="web">Web</button>
+                <button class="filter-btn bg-slate-800 text-slate-300 hover:text-white px-4 py-2 rounded border border-slate-700 hover:border-brand transition-colors font-mono text-sm" data-filter="hardware">IoT</button>
+                <button class="filter-btn bg-slate-800 text-slate-300 hover:text-white px-4 py-2 rounded border border-slate-700 hover:border-brand transition-colors font-mono text-sm" data-filter="automation">Automation</button>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="project-grid">
                 
-                <div class="project-card">
-                    <h3>Shopee Shop Management & Automation</h3>
-                    <p>Engineered an automated digital inventory fulfillment system integrated via Discord Python SDK, allowing customers to self-service and redeem digital items instantly using order IDs.</p>
-                    <p>Developed a back-end service using the Shopee OpenAPI to monitor and fetch real-time sales, stock levels, and order data.</p>
-                    <div class="project-tech">
-                        <span>Python</span>
-                        <span>Shopee OpenAPI</span>
-                        <span>Discord SDK</span>
+                <div class="project-card hardware web bg-cardBg rounded-lg overflow-hidden border border-slate-700 hover:border-brand hover:-translate-y-2 transition-all duration-300 group observer-element opacity-0 translate-y-10">
+                    <div class="p-6 h-full flex flex-col">
+                        <div class="flex justify-between items-start mb-4">
+                            <i class="fas fa-microchip text-3xl text-brand group-hover:scale-110 transition-transform"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">BEATS: Attendance System</h3>
+                        <p class="text-sm text-slate-400 mb-4 flex-grow">A gamified attendance engine for university students. Programmed C++ firmware for ESP32 BLE beacons to broadcast proximity signals and heartbeat pings to a Laravel backend. Built real-time lecturer portals with Vue/Inertia and cross-platform auth using Laravel Sanctum.</p>
+                        <div class="flex flex-wrap gap-2 text-xs font-mono text-slate-300">
+                            <span class="bg-slate-800 px-2 py-1 rounded">Laravel</span>
+                            <span class="bg-slate-800 px-2 py-1 rounded">Vue.js</span>
+                            <span class="bg-slate-800 px-2 py-1 rounded">C++</span>
+                        </div>
                     </div>
                 </div>
 
-                <div class="project-card">
-                    <h3>Network Stress Testing Suite</h3>
-                    <p>Designed and implemented a high-performance network testing suite to test server stability using Python's multiprocessing library for peak throughput.</p>
-                    <p>Developed robust logic for proxy rotation and validation, ensuring high request completion rates for testing endpoints.</p>
-                    <div class="project-tech">
-                        <span>Python</span>
-                        <span>Multiprocessing</span>
-                        <span>Asyncio</span>
-                        <span>Proxy Rotation</span>
+                <div class="project-card automation bg-cardBg rounded-lg overflow-hidden border border-slate-700 hover:border-brand hover:-translate-y-2 transition-all duration-300 group observer-element opacity-0 translate-y-10 delay-100">
+                    <div class="p-6 h-full flex flex-col">
+                        <div class="flex justify-between items-start mb-4">
+                            <i class="fas fa-shopping-cart text-3xl text-brand group-hover:scale-110 transition-transform"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Shopee Automation System</h3>
+                        <p class="text-sm text-slate-400 mb-4 flex-grow">Automated digital inventory fulfillment integrated via Discord Python SDK. Customers self-service digital items using order IDs. Back-end built using Shopee OpenAPI to fetch real-time sales and stock levels.</p>
+                        <div class="flex flex-wrap gap-2 text-xs font-mono text-slate-300">
+                            <span class="bg-slate-800 px-2 py-1 rounded">Python</span>
+                            <span class="bg-slate-800 px-2 py-1 rounded">Discord SDK</span>
+                            <span class="bg-slate-800 px-2 py-1 rounded">Shopee API</span>
+                        </div>
                     </div>
                 </div>
 
-                <div class="project-card more-projects-card">
-                    <div>
-                        <h3 style="color: var(--accent); margin-bottom: 0.5rem;">More in the works...</h3>
-                        <p style="font-size: 0.9rem;">I have several other technical projects and AI integrations currently under development. Ask me about them!</p>
+                <div class="project-card automation bg-cardBg rounded-lg overflow-hidden border border-slate-700 hover:border-brand hover:-translate-y-2 transition-all duration-300 group observer-element opacity-0 translate-y-10 delay-200">
+                    <div class="p-6 h-full flex flex-col">
+                        <div class="flex justify-between items-start mb-4">
+                            <i class="fas fa-network-wired text-3xl text-brand group-hover:scale-110 transition-transform"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Network Stress Testing Suite</h3>
+                        <p class="text-sm text-slate-400 mb-4 flex-grow">High-performance suite to test server stability. Utilized Python's multiprocessing library (after benchmarking against asyncio and threading) for peak throughput. Features robust logic for proxy rotation and validation.</p>
+                        <div class="flex flex-wrap gap-2 text-xs font-mono text-slate-300">
+                            <span class="bg-slate-800 px-2 py-1 rounded">Python</span>
+                            <span class="bg-slate-800 px-2 py-1 rounded">Multiprocessing</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card automation bg-cardBg rounded-lg overflow-hidden border border-slate-700 hover:border-brand hover:-translate-y-2 transition-all duration-300 group observer-element opacity-0 translate-y-10">
+                    <div class="p-6 h-full flex flex-col">
+                        <div class="flex justify-between items-start mb-4">
+                            <i class="fas fa-robot text-3xl text-brand group-hover:scale-110 transition-transform"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">The Early Hacks</h3>
+                        <p class="text-sm text-slate-400 mb-4 flex-grow">The projects that started it all: A Hypixel Skyblock auto-trader using computer vision, a Facebook Live auto-commenter, and a Twilio caller integrated with Discord.</p>
+                        <div class="flex flex-wrap gap-2 text-xs font-mono text-slate-300">
+                            <span class="bg-slate-800 px-2 py-1 rounded">Python</span>
+                            <span class="bg-slate-800 px-2 py-1 rounded">OpenCV</span>
+                            <span class="bg-slate-800 px-2 py-1 rounded">Twilio API</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card web bg-cardBg rounded-lg overflow-hidden border border-slate-700 hover:border-brand hover:-translate-y-2 transition-all duration-300 group observer-element opacity-0 translate-y-10">
+                    <div class="p-6 h-full flex flex-col">
+                        <div class="flex justify-between items-start mb-4">
+                            <i class="fas fa-camera text-3xl text-brand group-hover:scale-110 transition-transform"></i>
+                            <a href="https://apstp.com" target="_blank" class="text-slate-400 hover:text-brand"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Corporate Media Portfolio</h3>
+                        <p class="text-sm text-slate-400 mb-4 flex-grow">Developed functional requirements, technical specs, and a full system architecture for a professional photoshoot studio media portfolio at apstp.com.</p>
+                        <div class="flex flex-wrap gap-2 text-xs font-mono text-slate-300">
+                            <span class="bg-slate-800 px-2 py-1 rounded">Web Architecture</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card web bg-cardBg rounded-lg overflow-hidden border border-slate-700 hover:border-brand hover:-translate-y-2 transition-all duration-300 group observer-element opacity-0 translate-y-10">
+                    <div class="p-6 h-full flex flex-col">
+                        <div class="flex justify-between items-start mb-4">
+                            <i class="fab fa-java text-3xl text-brand group-hover:scale-110 transition-transform"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Live Currency Converter</h3>
+                        <p class="text-sm text-slate-400 mb-4 flex-grow">A structured Java application built during university to strictly apply Object-Oriented Design principles while fetching and parsing live exchange rates.</p>
+                        <div class="flex flex-wrap gap-2 text-xs font-mono text-slate-300">
+                            <span class="bg-slate-800 px-2 py-1 rounded">Java</span>
+                            <span class="bg-slate-800 px-2 py-1 rounded">OOP</span>
+                        </div>
                     </div>
                 </div>
 
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- AWARDS & CERTS -->
-        <section id="awards" class="container">
-            <h2>Awards & Certifications</h2>
-            <div class="list-grid">
-                <div>
-                    <h3 style="color: var(--text-main); margin-bottom: 1rem;"><span class="highlight">#</span> Awards</h3>
-                    <div class="list-item">
-                        <h4>Huawei ICT Competition 2025</h4>
-                        <p class="code-text highlight">National Finalist</p>
-                        <p style="font-size: 0.85rem; margin-bottom: 0;">Cloud Track</p>
-                    </div>
-                    <div class="list-item">
-                        <h4>TopCoder Coding Challenge 2025</h4>
-                        <p class="code-text highlight">Top 20 (National) | 3rd Place (University)</p>
-                    </div>
-                    <div class="list-item">
-                        <h4>Huawei Innovation Competition</h4>
-                        <p class="code-text highlight">2nd Preliminary (Pitching level)</p>
+    <section id="experience" class="py-24 border-t border-slate-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12">
+                
+                <div class="observer-element opacity-0 translate-y-10 transition-all duration-700 ease-out">
+                    <h2 class="text-3xl font-bold text-white mb-8">Background</h2>
+                    <div class="space-y-8 border-l-2 border-slate-700 pl-4 relative">
+                        <div class="relative">
+                            <div class="absolute -left-[21px] top-1 h-3 w-3 rounded-full bg-brand"></div>
+                            <h4 class="font-bold text-white text-lg">Diploma in Information Technology</h4>
+                            <p class="text-brand mb-2 text-sm font-mono">Jul 2024 - Jan 2027 (Expected)</p>
+                            <p class="text-slate-400 text-sm">Universiti Kuala Lumpur (MIIT). Current CGPA: 3.82. Dean's List (4 times).</p>
+                        </div>
+                        <div class="relative">
+                            <div class="absolute -left-[21px] top-1 h-3 w-3 rounded-full bg-brand"></div>
+                            <h4 class="font-bold text-white text-lg">Independent Developer</h4>
+                            <p class="text-brand mb-2 text-sm font-mono">Jan 2021 - Present</p>
+                            <p class="text-slate-400 text-sm">Managed the full development lifecycle for client and self-directed automation services, specializing in Python back-end architecture and external API integration.</p>
+                        </div>
                     </div>
                 </div>
 
-                <div>
-                    <h3 style="color: var(--text-main); margin-bottom: 1rem;"><span class="highlight">#</span> Certifications</h3>
-                    <div class="list-item">
-                        <h4>App Development with Swift</h4>
-                        <p class="code-text highlight">Associate Level</p>
-                        <p style="font-size: 0.85rem; margin-bottom: 0;">Issued: Sep 2025</p>
-                    </div>
+                <div class="observer-element opacity-0 translate-y-10 transition-all duration-700 delay-100 ease-out">
+                    <h2 class="text-3xl font-bold text-white mb-8">Awards & Certifications</h2>
+                    <ul class="space-y-4">
+                        <li class="bg-cardBg p-4 rounded-lg border border-slate-700 flex items-start group hover:border-brand transition-colors">
+                            <i class="fab fa-apple text-brand mt-1 mr-4 text-xl"></i>
+                            <div>
+                                <h4 class="font-bold text-white group-hover:text-brand transition-colors">App Development with Swift - Associate</h4>
+                                <p class="text-sm text-slate-400">Valid until September 2030</p>
+                            </div>
+                        </li>
+                        <li class="bg-cardBg p-4 rounded-lg border border-slate-700 flex items-start group hover:border-brand transition-colors">
+                            <i class="fab fa-aws text-brand mt-1 mr-4 text-xl"></i>
+                            <div>
+                                <h4 class="font-bold text-white group-hover:text-brand transition-colors">AWS Certified Solution Architect</h4>
+                                <p class="text-sm text-slate-400">Expected Completion: August 2026</p>
+                            </div>
+                        </li>
+                        <li class="bg-cardBg p-4 rounded-lg border border-slate-700 flex items-start group hover:border-brand transition-colors">
+                            <i class="fas fa-trophy text-brand mt-1 mr-4 text-xl"></i>
+                            <div>
+                                <h4 class="font-bold text-white group-hover:text-brand transition-colors">Competitive Programming</h4>
+                                <p class="text-sm text-slate-400">TopCoder 2025: Top 20 National, 3rd University</p>
+                            </div>
+                        </li>
+                        <li class="bg-cardBg p-4 rounded-lg border border-slate-700 flex items-start group hover:border-brand transition-colors">
+                            <i class="fas fa-medal text-brand mt-1 mr-4 text-xl"></i>
+                            <div>
+                                <h4 class="font-bold text-white group-hover:text-brand transition-colors">Hackathons & Innovation</h4>
+                                <p class="text-sm text-slate-400">Huawei ICT Cloud Track (National Finalist)<br>Kabel Hackathon (Preliminary)<br>Huawei Innovation (2nd Preliminary)</p>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
-            </div>
-        </section>
-    </main>
 
-    <!-- FOOTER -->
-    <footer>
-        <div class="container">
-            <div class="social-links">
-                <a href="https://github.com/Nami" target="_blank">GitHub</a>
-                <a href="https://linkedin.com/in/najmisanusi" target="_blank">LinkedIn</a>
-                <a href="mailto:najmisanusi@gmail.com">Email</a>
             </div>
-            <p style="font-size: 0.85rem;">&copy; 2026 Muhammad Najmi. Built with HTML, CSS & JS.</p>
+        </div>
+    </section>
+
+    <footer id="contact" class="py-20 border-t border-slate-800 text-center bg-darkBg">
+        <div class="max-w-3xl mx-auto px-4 observer-element opacity-0 translate-y-10 transition-all duration-700 ease-out">
+            <h2 class="text-brand font-mono mb-4 text-lg">What's Next?</h2>
+            <h3 class="text-4xl font-bold text-white mb-6">Get In Touch</h3>
+            <p class="text-slate-400 mb-10 text-lg leading-relaxed">
+                I am actively seeking a Software Engineering Internship for July 2026. Whether you need robust APIs, hardware integration, or scalable systems, my inbox is open.
+            </p>
+            <a href="mailto:najmisanusi@gmail.com" class="inline-block bg-brand text-white px-8 py-4 rounded-md hover:bg-blue-600 hover:shadow-lg hover:shadow-brand/20 transition-all transform hover:-translate-y-1 font-mono">
+                Email Me
+            </a>
+            
+            <div class="mt-16 flex justify-center space-x-6">
+                <a href="https://github.com/namix.my" target="_blank" class="text-slate-500 hover:text-white text-2xl transition-colors transform hover:scale-110"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/najmisanusi" target="_blank" class="text-slate-500 hover:text-white text-2xl transition-colors transform hover:scale-110"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <p class="mt-8 text-sm font-mono text-slate-600">
+                Designed & Built by Muhammad Najmi<br>
+                <span class="text-slate-700">HTML • Tailwind CSS • Vanilla JS</span>
+            </p>
         </div>
     </footer>
 
-    <!-- INTERSECTION OBSERVER FOR SCROLL ANIMATIONS -->
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const observer = new IntersectionObserver((entries) => {
+        document.addEventListener("DOMContentLoaded", () => {
+            
+            // 1. Typewriter Effect
+            const textArray = ["high-concurrency systems.", "hardware IoT solutions.", "automation pipelines.", "full-stack applications."];
+            let textIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
+            const typewriterElement = document.getElementById("typewriter");
+
+            function type() {
+                const currentText = textArray[textIndex];
+                
+                if (isDeleting) {
+                    typewriterElement.textContent = currentText.substring(0, charIndex - 1);
+                    charIndex--;
+                } else {
+                    typewriterElement.textContent = currentText.substring(0, charIndex + 1);
+                    charIndex++;
+                }
+
+                let typeSpeed = isDeleting ? 40 : 80;
+
+                if (!isDeleting && charIndex === currentText.length) {
+                    typeSpeed = 2000; // Pause at end of word
+                    isDeleting = true;
+                } else if (isDeleting && charIndex === 0) {
+                    isDeleting = false;
+                    textIndex = (textIndex + 1) % textArray.length;
+                    typeSpeed = 500; // Pause before starting next word
+                }
+
+                setTimeout(type, typeSpeed);
+            }
+            setTimeout(type, 1000);
+
+            // 2. Scroll Animation Observer
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
+                        entry.target.classList.remove('opacity-0', 'translate-y-10');
+                        entry.target.classList.add('opacity-100', 'translate-y-0');
+                        observer.unobserve(entry.target);
                     }
                 });
-            }, { threshold: 0.1 });
+            }, observerOptions);
 
-            document.querySelectorAll('section').forEach((section) => {
-                observer.observe(section);
+            document.querySelectorAll('.observer-element').forEach((el) => {
+                observer.observe(el);
+            });
+
+            // 3. Project Filtering System
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const projectCards = document.querySelectorAll('.project-card');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterBtns.forEach(b => {
+                        b.classList.remove('bg-brand', 'text-white');
+                        b.classList.add('bg-slate-800', 'text-slate-300');
+                    });
+                    btn.classList.remove('bg-slate-800', 'text-slate-300');
+                    btn.classList.add('bg-brand', 'text-white');
+
+                    const filterValue = btn.getAttribute('data-filter');
+
+                    projectCards.forEach(card => {
+                        card.style.opacity = '0';
+                        card.style.transform = 'scale(0.95)';
+                        
+                        setTimeout(() => {
+                            if (filterValue === 'all' || card.classList.contains(filterValue)) {
+                                card.style.display = 'block';
+                                setTimeout(() => {
+                                    card.style.opacity = '1';
+                                    card.style.transform = 'scale(1)';
+                                }, 50);
+                            } else {
+                                card.style.display = 'none';
+                            }
+                        }, 300);
+                    });
+                });
+            });
+
+            // 4. Navbar Background on Scroll
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('shadow-lg', 'bg-darkBg/95');
+                } else {
+                    navbar.classList.remove('shadow-lg', 'bg-darkBg/95');
+                }
             });
         });
     </script>
