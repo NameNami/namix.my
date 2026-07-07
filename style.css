@@ -711,12 +711,16 @@ a.social-icon:hover {
         position: fixed;
         left: -100%;
         top: 70px;
+        width: 100%;
         gap: 0;
         flex-direction: column;
-        background: var(--glass-bg);
-        backdrop- width: 100%;
+        background: rgba(28, 28, 28, 0.95);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
         text-align: center;
-        transition: 0.3s;
+        transition: left 0.3s ease;
+        padding: 2rem 0;
+        border-bottom: 1px solid var(--glass-border);
     }
 
     .nav-links.active {
@@ -728,11 +732,17 @@ a.social-icon:hover {
     }
 
     .hero h1 {
-        font-size: 3rem;
+        font-size: 2.2rem;
+        padding: 0 1rem;
     }
 
     .hero h2 {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+        padding: 0 1rem;
     }
     
     .projects-split-layout {
