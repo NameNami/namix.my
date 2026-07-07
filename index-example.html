@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Muhammad Najmi bin Mohd Sanusi | Full Stack Developer</title>
+    <meta name="description" content="Portfolio of Muhammad Najmi bin Mohd Sanusi, a Full Stack Developer specializing in Python, the VILT stack, and hardware IoT integration. View projects like BEATS and Shopee automation systems.">
+    <meta name="keywords" content="Muhammad Najmi bin Mohd Sanusi, Najmi Sanusi, Full Stack Developer, Python Developer, VILT Stack, Laravel, Vue.js, IoT, ESP32, Malaysia, UniKL MIIT">
+    <meta name="author" content="Muhammad Najmi bin Mohd Sanusi">
+    
+    <meta property="og:title" content="Muhammad Najmi bin Mohd Sanusi | Portfolio">
+    <meta property="og:description" content="Full Stack Developer specializing in backend architecture, web integration, and automation. Seeking July 2026 Internship.">
+    <meta property="og:type" content="website">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Muhammad Najmi bin Mohd Sanusi",
+      "alternateName": ["Najmi Sanusi", "Nami"],
+      "jobTitle": "Full Stack Developer",
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "Universiti Kuala Lumpur (Malaysian Institute of Information Technology)"
+      },
+      "knowsAbout": ["Python", "Laravel", "Vue.js", "C++", "IoT Development", "Automation", "AWS", "Swift"],
+      "sameAs": [
+        "https://github.com/namenami",
+        "https://linkedin.com/in/najmisanusi"
+      ]
+    }
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: '#3b82f6',
+                        darkBg: '#0f172a',
+                        cardBg: '#1e293b'
+                    },
+                    animation: {
+                        'bounce-slow': 'bounce 3s infinite',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .cursor::after {
+            content: '|';
+            animation: blink 1s step-start infinite;
+        }
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+        /* Custom scrollbar for a cleaner look */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #3b82f6; }
+    </style>
+</head>
+<body class="bg-darkBg text-slate-300 font-sans antialiased selection:bg-brand selection:text-white overflow-x-hidden">
+
+    <nav class="fixed w-full bg-darkBg/90 backdrop-blur-md border-b border-slate-800 z-50 transition-all duration-300" id="navbar">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <a href="#home" class="text-white font-bold text-xl tracking-tight hover:text-brand transition-colors">Nami.</a>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#about" class="hover:text-brand transition-colors transform hover:-translate-y-0.5 duration-200">About</a>
+                        <a href="#projects" class="hover:text-brand transition-colors transform hover:-translate-y-0.5 duration-200">Projects</a>
+                        <a href="#experience" class="hover:text-brand transition-colors transform hover:-translate-y-0.5 duration-200">Experience</a>
+                        <a href="#contact" class="hover:text-brand transition-colors transform hover:-translate-y-0.5 duration-200">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="min-h-screen flex items-center pt-20 px-4 max-w-6xl mx-auto relative">
+        <div class="max-w-3xl z-10 animate-fade-in">
+            <p class="text-brand font-mono mb-4 text-lg">Hi, my name is</p>
+            <h1 class="text-5xl md:text-7xl font-bold text-white mb-4 tracking-tight">
+                Muhammad Najmi. <br>
+            </h1>
+            <h2 class="text-2xl md:text-3xl text-slate-300 mb-6 font-mono h-10">
+                I build <span id="typewriter" class="text-brand cursor"></span>
+            </h2>
+            <p class="text-lg md:text-xl text-slate-400 mb-10 leading-relaxed max-w-2xl">
+                A Full Stack Developer specializing in end-to-end application development, from engineering web scraping pipelines to designing responsive user dashboards. Currently seeking a Software Engineering Internship for July 2026.
+            </p>
+            <div class="flex flex-wrap gap-4 text-sm font-mono">
+                <a href="#projects" class="bg-brand text-white px-6 py-3 rounded-md hover:bg-blue-600 hover:shadow-lg hover:shadow-brand/20 transition-all transform hover:-translate-y-1">View My Work</a>
+                <a href="https://github.com/namix.my" target="_blank" class="bg-cardBg text-white px-6 py-3 rounded-md hover:bg-slate-700 transition-all border border-slate-700 transform hover:-translate-y-1">
+                    <i class="fab fa-github mr-2"></i>GitHub
+                </a>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce-slow text-slate-500">
+            <a href="#about"><i class="fas fa-chevron-down text-2xl hover:text-brand transition-colors"></i></a>
+        </div>
+    </section>
+
+    <section id="about" class="py-24 border-t border-slate-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 observer-element opacity-0 translate-y-10 transition-all duration-700 ease-out">
+            <div class="flex items-center mb-12">
+                <h2 class="text-3xl font-bold text-white whitespace-nowrap">About Me</h2>
+                <div class="h-px bg-slate-700 w-full ml-6"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="space-y-6 text-lg text-slate-400 leading-relaxed">
+                    <p>
+                        My coding origins are rooted in brute-force automation. Back in Form 2, I was already writing Python scripts with computer vision to flip items on the Hypixel Skyblock bazaar and building "sape cepat dia dapat" auto-commenters for Facebook Live.
+                    </p>
+                    <p>
+                        Today, I channel that hacker mindset into structured software engineering at UniKL MIIT. I maintain a 3.85 CGPA and focus on high-concurrency system design, robust web integration, and the VILT stack. Whether I'm flashing C++ firmware to an ESP32 or building secure APIs with Laravel Sanctum, I prioritize performance and utility.
+                    </p>
+                    <p>
+                        When I'm not writing snake_case PHP or hunting down bugs, I'm usually out hitting the trails on my hardtail MTB or training for my next half-marathon.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-6 font-mono text-brand">Tech Stack</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-cardBg p-4 rounded border border-slate-800 hover:border-brand transition-colors group">
+                            <h4 class="text-white font-bold mb-2 group-hover:text-brand transition-colors">Backend</h4>
+                            <p class="text-sm text-slate-400">Python, PHP, Java, SQL (MySQL), Flask, Laravel</p>
+                        </div>
+                        <div class="bg-cardBg p-4 rounded border border-slate-800 hover:border-brand transition-colors group">
+                            <h4 class="text-white font-bold mb-2 group-hover:text-brand transition-colors">Frontend</h4>
+                            <p class="text-sm text-slate-400">Vue.js, Inertia.js, Tailwind CSS, JavaScript, HTML, CSS</p>
+                        </div>
+                        <div class="bg-cardBg p-4 rounded border border-slate-800 hover:border-brand transition-colors group">
+                            <h4 class="text-white font-bold mb-2 group-hover:text-brand transition-colors">Hardware / Systems</h4>
+                            <p class="text-sm text-slate-400">ESP32, C++, Micropython, Threading, Multiprocessing</p>
+                        </div>
+                        <div class="bg-cardBg p-4 rounded border border-slate-800 hover:border-brand transition-colors group">
+                            <h4 class="text-white font-bold mb-2 group-hover:text-brand transition-colors">Cloud & APIs</h4>
+                            <p class="text-sm text-slate-400">GCP, AWS, FirebaseAI, Discord/Telegram SDKs, Shopee API</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-24 bg-cardBg/30 border-t border-slate-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center mb-8 observer-element opacity-0 translate-y-10 transition-all duration-700 ease-out">
+                <h2 class="text-3xl font-bold text-white whitespace-nowrap">Things I've Built</h2>
+                <div class="h-px bg-slate-700 w-full ml-6"></div>
+            </div>
+
+            <div class="flex flex-wrap gap-4 mb-10 observer-element opacity-0 translate-y-10 transition-all duration-700 delay-100 ease-out">
+                <button class="filter-btn active bg-brand text-white px-4 py-2 rounded font-mono text-sm" data-filter="all">All</button>
+                <button class="filter-btn bg-slate-800 text-slate-300 hover:text-white px-4 py-2 rounded border border-slate-700 hover:border-brand transition-colors font-mono text-sm" data-filter="web">Web</button>
+                <button class="filter-btn bg-slate-800 text-slate-300 hover:text-white px-4 py-2 rounded border border-slate-700 hover:border-brand transition-colors font-mono text-sm" data-filter="hardware">IoT</button>
+                <button class="filter-btn bg-slate-800 text-slate-300 hover:text-white px-4 py-2 rounded border border-slate-700 hover:border-brand transition-colors font-mono text-sm" data-filter="automation">Automation</button>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="project-grid">
+                
+                <div class="project-card hardware web bg-cardBg rounded-lg overflow-hidden border border-slate-700 hover:border-brand hover:-translate-y-2 transition-all duration-300 group observer-element opacity-0 translate-y-10">
+                    <div class="p-6 h-full flex flex-col">
+                        <div class="flex justify-between items-start mb-4">
+                            <i class="fas fa-microchip text-3xl text-brand group-hover:scale-110 transition-transform"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">BEATS: Attendance System</h3>
+                        <p class="text-sm text-slate-400 mb-4 flex-grow">A gamified attendance engine for university students. Programmed C++ firmware for ESP32 BLE beacons to broadcast proximity signals and heartbeat pings to a Laravel backend. Built real-time lecturer portals with Vue/Inertia and cross-platform auth using Laravel Sanctum.</p>
+                        <div class="flex flex-wrap gap-2 text-xs font-mono text-slate-300">
+                            <span class="bg-slate-800 px-2 py-1 rounded">Laravel</span>
+                            <span class="bg-slate-800 px-2 py-1 rounded">Vue.js</span>
+                            <span class="bg-slate-800 px-2 py-1 rounded">C++</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card automation bg-cardBg rounded-lg overflow-hidden border border-slate-700 hover:border-brand hover:-translate-y-2 transition-all duration-300 group observer-element opacity-0 translate-y-10 delay-100">
+                    <div class="p-6 h-full flex flex-col">
+                        <div class="flex justify-between items-start mb-4">
+                            <i class="fas fa-shopping-cart text-3xl text-brand group-hover:scale-110 transition-transform"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Shopee Automation System</h3>
+                        <p class="text-sm text-slate-400 mb-4 flex-grow">Automated digital inventory fulfillment integrated via Discord Python SDK. Customers self-service digital items using order IDs. Back-end built using Shopee OpenAPI to fetch real-time sales and stock levels.</p>
+                        <div class="flex flex-wrap gap-2 text-xs font-mono text-slate-300">
+                            <span class="bg-slate-800 px-2 py-1 rounded">Python</span>
+                            <span class="bg-slate-800 px-2 py-1 rounded">Discord SDK</span>
+                            <span class="bg-slate-800 px-2 py-1 rounded">Shopee API</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card automation bg-cardBg rounded-lg overflow-hidden border border-slate-700 hover:border-brand hover:-translate-y-2 transition-all duration-300 group observer-element opacity-0 translate-y-10 delay-200">
+                    <div class="p-6 h-full flex flex-col">
+                        <div class="flex justify-between items-start mb-4">
+                            <i class="fas fa-network-wired text-3xl text-brand group-hover:scale-110 transition-transform"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Network Stress Testing Suite</h3>
+                        <p class="text-sm text-slate-400 mb-4 flex-grow">High-performance suite to test server stability. Utilized Python's multiprocessing library (after benchmarking against asyncio and threading) for peak throughput. Features robust logic for proxy rotation and validation.</p>
+                        <div class="flex flex-wrap gap-2 text-xs font-mono text-slate-300">
+                            <span class="bg-slate-800 px-2 py-1 rounded">Python</span>
+                            <span class="bg-slate-800 px-2 py-1 rounded">Multiprocessing</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card automation bg-cardBg rounded-lg overflow-hidden border border-slate-700 hover:border-brand hover:-translate-y-2 transition-all duration-300 group observer-element opacity-0 translate-y-10">
+                    <div class="p-6 h-full flex flex-col">
+                        <div class="flex justify-between items-start mb-4">
+                            <i class="fas fa-robot text-3xl text-brand group-hover:scale-110 transition-transform"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">The Early Hacks</h3>
+                        <p class="text-sm text-slate-400 mb-4 flex-grow">The projects that started it all: A Hypixel Skyblock auto-trader using computer vision, a Facebook Live auto-commenter, and a Twilio caller integrated with Discord.</p>
+                        <div class="flex flex-wrap gap-2 text-xs font-mono text-slate-300">
+                            <span class="bg-slate-800 px-2 py-1 rounded">Python</span>
+                            <span class="bg-slate-800 px-2 py-1 rounded">OpenCV</span>
+                            <span class="bg-slate-800 px-2 py-1 rounded">Twilio API</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card web bg-cardBg rounded-lg overflow-hidden border border-slate-700 hover:border-brand hover:-translate-y-2 transition-all duration-300 group observer-element opacity-0 translate-y-10">
+                    <div class="p-6 h-full flex flex-col">
+                        <div class="flex justify-between items-start mb-4">
+                            <i class="fas fa-camera text-3xl text-brand group-hover:scale-110 transition-transform"></i>
+                            <a href="https://apstp.com" target="_blank" class="text-slate-400 hover:text-brand"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Corporate Media Portfolio</h3>
+                        <p class="text-sm text-slate-400 mb-4 flex-grow">Developed functional requirements, technical specs, and a full system architecture for a professional photoshoot studio media portfolio at apstp.com.</p>
+                        <div class="flex flex-wrap gap-2 text-xs font-mono text-slate-300">
+                            <span class="bg-slate-800 px-2 py-1 rounded">Web Architecture</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card web bg-cardBg rounded-lg overflow-hidden border border-slate-700 hover:border-brand hover:-translate-y-2 transition-all duration-300 group observer-element opacity-0 translate-y-10">
+                    <div class="p-6 h-full flex flex-col">
+                        <div class="flex justify-between items-start mb-4">
+                            <i class="fab fa-java text-3xl text-brand group-hover:scale-110 transition-transform"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Live Currency Converter</h3>
+                        <p class="text-sm text-slate-400 mb-4 flex-grow">A structured Java application built during university to strictly apply Object-Oriented Design principles while fetching and parsing live exchange rates.</p>
+                        <div class="flex flex-wrap gap-2 text-xs font-mono text-slate-300">
+                            <span class="bg-slate-800 px-2 py-1 rounded">Java</span>
+                            <span class="bg-slate-800 px-2 py-1 rounded">OOP</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="py-24 border-t border-slate-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12">
+                
+                <div class="observer-element opacity-0 translate-y-10 transition-all duration-700 ease-out">
+                    <h2 class="text-3xl font-bold text-white mb-8">Background</h2>
+                    <div class="space-y-8 border-l-2 border-slate-700 pl-4 relative">
+                        <div class="relative">
+                            <div class="absolute -left-[21px] top-1 h-3 w-3 rounded-full bg-brand"></div>
+                            <h4 class="font-bold text-white text-lg">Diploma in Information Technology</h4>
+                            <p class="text-brand mb-2 text-sm font-mono">Jul 2024 - Jan 2027 (Expected)</p>
+                            <p class="text-slate-400 text-sm">Universiti Kuala Lumpur (MIIT). Current CGPA: 3.82. Dean's List (4 times).</p>
+                        </div>
+                        <div class="relative">
+                            <div class="absolute -left-[21px] top-1 h-3 w-3 rounded-full bg-brand"></div>
+                            <h4 class="font-bold text-white text-lg">Independent Developer</h4>
+                            <p class="text-brand mb-2 text-sm font-mono">Jan 2021 - Present</p>
+                            <p class="text-slate-400 text-sm">Managed the full development lifecycle for client and self-directed automation services, specializing in Python back-end architecture and external API integration.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="observer-element opacity-0 translate-y-10 transition-all duration-700 delay-100 ease-out">
+                    <h2 class="text-3xl font-bold text-white mb-8">Awards & Certifications</h2>
+                    <ul class="space-y-4">
+                        <li class="bg-cardBg p-4 rounded-lg border border-slate-700 flex items-start group hover:border-brand transition-colors">
+                            <i class="fab fa-apple text-brand mt-1 mr-4 text-xl"></i>
+                            <div>
+                                <h4 class="font-bold text-white group-hover:text-brand transition-colors">App Development with Swift - Associate</h4>
+                                <p class="text-sm text-slate-400">Valid until September 2030</p>
+                            </div>
+                        </li>
+                        <li class="bg-cardBg p-4 rounded-lg border border-slate-700 flex items-start group hover:border-brand transition-colors">
+                            <i class="fab fa-aws text-brand mt-1 mr-4 text-xl"></i>
+                            <div>
+                                <h4 class="font-bold text-white group-hover:text-brand transition-colors">AWS Certified Solution Architect</h4>
+                                <p class="text-sm text-slate-400">Expected Completion: August 2026</p>
+                            </div>
+                        </li>
+                        <li class="bg-cardBg p-4 rounded-lg border border-slate-700 flex items-start group hover:border-brand transition-colors">
+                            <i class="fas fa-trophy text-brand mt-1 mr-4 text-xl"></i>
+                            <div>
+                                <h4 class="font-bold text-white group-hover:text-brand transition-colors">Competitive Programming</h4>
+                                <p class="text-sm text-slate-400">TopCoder 2025: Top 20 National, 3rd University</p>
+                            </div>
+                        </li>
+                        <li class="bg-cardBg p-4 rounded-lg border border-slate-700 flex items-start group hover:border-brand transition-colors">
+                            <i class="fas fa-medal text-brand mt-1 mr-4 text-xl"></i>
+                            <div>
+                                <h4 class="font-bold text-white group-hover:text-brand transition-colors">Hackathons & Innovation</h4>
+                                <p class="text-sm text-slate-400">Huawei ICT Cloud Track (National Finalist)<br>Kabel Hackathon (Preliminary)<br>Huawei Innovation (2nd Preliminary)</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="py-20 border-t border-slate-800 text-center bg-darkBg">
+        <div class="max-w-3xl mx-auto px-4 observer-element opacity-0 translate-y-10 transition-all duration-700 ease-out">
+            <h2 class="text-brand font-mono mb-4 text-lg">What's Next?</h2>
+            <h3 class="text-4xl font-bold text-white mb-6">Get In Touch</h3>
+            <p class="text-slate-400 mb-10 text-lg leading-relaxed">
+                I am actively seeking a Software Engineering Internship for July 2026. Whether you need robust APIs, hardware integration, or scalable systems, my inbox is open.
+            </p>
+            <a href="mailto:najmisanusi@gmail.com" class="inline-block bg-brand text-white px-8 py-4 rounded-md hover:bg-blue-600 hover:shadow-lg hover:shadow-brand/20 transition-all transform hover:-translate-y-1 font-mono">
+                Email Me
+            </a>
+            
+            <div class="mt-16 flex justify-center space-x-6">
+                <a href="https://github.com/namix.my" target="_blank" class="text-slate-500 hover:text-white text-2xl transition-colors transform hover:scale-110"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/najmisanusi" target="_blank" class="text-slate-500 hover:text-white text-2xl transition-colors transform hover:scale-110"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <p class="mt-8 text-sm font-mono text-slate-600">
+                Designed & Built by Muhammad Najmi<br>
+                <span class="text-slate-700">HTML • Tailwind CSS • Vanilla JS</span>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            
+            // 1. Typewriter Effect
+            const textArray = ["high-concurrency systems.", "hardware IoT solutions.", "automation pipelines.", "full-stack applications."];
+            let textIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
+            const typewriterElement = document.getElementById("typewriter");
+
+            function type() {
+                const currentText = textArray[textIndex];
+                
+                if (isDeleting) {
+                    typewriterElement.textContent = currentText.substring(0, charIndex - 1);
+                    charIndex--;
+                } else {
+                    typewriterElement.textContent = currentText.substring(0, charIndex + 1);
+                    charIndex++;
+                }
+
+                let typeSpeed = isDeleting ? 40 : 80;
+
+                if (!isDeleting && charIndex === currentText.length) {
+                    typeSpeed = 2000; // Pause at end of word
+                    isDeleting = true;
+                } else if (isDeleting && charIndex === 0) {
+                    isDeleting = false;
+                    textIndex = (textIndex + 1) % textArray.length;
+                    typeSpeed = 500; // Pause before starting next word
+                }
+
+                setTimeout(type, typeSpeed);
+            }
+            setTimeout(type, 1000);
+
+            // 2. Scroll Animation Observer
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.remove('opacity-0', 'translate-y-10');
+                        entry.target.classList.add('opacity-100', 'translate-y-0');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.observer-element').forEach((el) => {
+                observer.observe(el);
+            });
+
+            // 3. Project Filtering System
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const projectCards = document.querySelectorAll('.project-card');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterBtns.forEach(b => {
+                        b.classList.remove('bg-brand', 'text-white');
+                        b.classList.add('bg-slate-800', 'text-slate-300');
+                    });
+                    btn.classList.remove('bg-slate-800', 'text-slate-300');
+                    btn.classList.add('bg-brand', 'text-white');
+
+                    const filterValue = btn.getAttribute('data-filter');
+
+                    projectCards.forEach(card => {
+                        card.style.opacity = '0';
+                        card.style.transform = 'scale(0.95)';
+                        
+                        setTimeout(() => {
+                            if (filterValue === 'all' || card.classList.contains(filterValue)) {
+                                card.style.display = 'block';
+                                setTimeout(() => {
+                                    card.style.opacity = '1';
+                                    card.style.transform = 'scale(1)';
+                                }, 50);
+                            } else {
+                                card.style.display = 'none';
+                            }
+                        }, 300);
+                    });
+                });
+            });
+
+            // 4. Navbar Background on Scroll
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('shadow-lg', 'bg-darkBg/95');
+                } else {
+                    navbar.classList.remove('shadow-lg', 'bg-darkBg/95');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
