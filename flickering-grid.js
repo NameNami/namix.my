@@ -186,15 +186,25 @@
     function updateCanvasSize() {
         const width = canvas.clientWidth;
         const height = canvas.clientHeight;
+        if (width === 0 && height === 0) return;
         gridParams = setupCanvas(canvas, width, height);
     }
 
     window.addEventListener('resize', updateCanvasSize);
+    window.addEventListener('load', updateCanvasSize);
+    if (typeof ResizeObserver !== 'undefined') {
+        const ro = new ResizeObserver(updateCanvasSize);
+        if (canvas.parentElement) ro.observe(canvas.parentElement);
+    }
     updateCanvasSize();
 
     let lastTime = 0;
     function animate(time) {
-        if (!isInView || !gridParams) return;
+        if (!isInView || !gridParams) {
+            lastTime = time;
+            animationFrameId = requestAnimationFrame(animate);
+            return;
+        }
 
         let deltaTime = (time - lastTime) / 1000;
         if (deltaTime > 0.1) deltaTime = 0.1;
