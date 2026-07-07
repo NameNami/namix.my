@@ -75,8 +75,9 @@
         const dpr = window.devicePixelRatio || 1;
         canvas.width = width * dpr;
         canvas.height = height * dpr;
-        canvas.style.width = `${width}px`;
-        canvas.style.height = `${height}px`;
+        // Let CSS handle the display size so it remains responsive
+        canvas.style.width = '100%';
+        canvas.style.height = '100%';
         const cols = Math.ceil(width / cellSize);
         const rows = Math.ceil(height / cellSize);
         
@@ -184,8 +185,8 @@
     }
 
     function updateCanvasSize() {
-        const width = canvas.clientWidth;
-        const height = canvas.clientHeight;
+        const width = canvas.parentElement ? canvas.parentElement.clientWidth : canvas.clientWidth;
+        const height = canvas.parentElement ? canvas.parentElement.clientHeight : canvas.clientHeight;
         if (width === 0 && height === 0) return;
         gridParams = setupCanvas(canvas, width, height);
     }
